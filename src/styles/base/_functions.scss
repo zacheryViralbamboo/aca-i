@@ -1,0 +1,136 @@
+////
+// A collection of function for advanced type checking
+// @author Hugo Giraudel
+////
+@function is-number($value) {
+   @return type-of($value) =='number';
+}
+@function is-time($value) {
+   @return is-number($value) and index( 'ms' 's', unit($value)) != null;
+}
+@function is-duration($value) {
+   @return is-time($value);
+}
+@function is-angle($value) {
+   @return is-number($value) and index( 'deg' 'rad' 'grad' 'turn', unit($value)) != null;
+}
+@function is-frequency($value) {
+   @return is-number($value) and index( 'Hz' 'kHz', unit($value)) != null;
+}
+@function is-integer($value) {
+   @return is-number($value) and round($value) == $value;
+}
+@function is-relative-length($value) {
+   @return is-number($value) and index( 'em' 'ex' 'ch' 'rem' 'vw' 'vh' 'vmin' 'vmax', unit($value)) != null;
+}
+@function is-absolute-length($value) {
+   @return is-number($value) and index( 'cm' 'mm' 'in' 'px' 'pt' 'pc', unit($value)) != null;
+}
+@function is-percentage($value) {
+   @return is-number($value) and unit($value) =='%';
+}
+@function is-length($value) {
+   @return is-relative-length($value) or is-absolute-length($value);
+}
+@function is-resolution($value) {
+   @return is-number($value) and index( 'dpi' 'dpcm' 'dppx', unit($value)) != null;
+}
+@function is-position($value) {
+   @return is-length($value) or is-percentage($value) or index( 'top' 'right' 'bottom' 'left' 'center', $value) != null;
+}
+// ---------
+// check if a variable is in a list:
+@function contains($list,$var) {
+   @return (false != index($list, $var));
+}
+// ---------
+// Custom functions:
+// responsive unit function
+@function ru($size: 1) {
+   @return calc(#{ms($size - 2)} + #{$size / 5.5}vw + #{$size / 5.5}vh);
+}
+@function partition($index: 1, $base: percentage, $ratio: 0.618) {
+  // calculating golden sections persentage of parent
+  // with specified times ($index) the ratio is applied
+  // default is divide by golden ratio for once.
+  $valid-base: percentage, vw, vh, vmin, vmax;
+  @if is-integer($index) {
+    // define initial $value to 1.
+    $value: 1;
+    // if not equal to 0, do calculations:
+    @if $index != 0 {
+       @if $index < 0{
+        // if the index is negative
+        $ratio: 1 / 0.618;
+        // flip the index to a positive number for the loop
+        $index: -1 * $index;
+      }
+      // do the calculation: from 1 to $index.
+      // when $index = 1, loop once, $value = 1 * 0.618 = 0.618
+      // when $index = 2, loop twice, $value = 1 * 0.618 * 0.618 = 0.3819
+      // when $index = -1, loop once, $value = 1 * (1 / 0.618) = 1.618
+      @for $i from 1 through $index {
+        $value: $value * $ratio;
+      }
+    }
+    @if contains($valid-base, $base) {
+       @if $base == percentage{
+        // convert result to percentage
+        $value: $value * 100%;
+      }
+      @else {
+        $value: $value * 100 + $base;
+      }
+    }
+    @else {
+       @error"The given unit is not valid.";
+    }
+    @return $value
+  ;}
+   @else{
+    @error "The $index for function golden-section() has to be an integer.";
+  }
+}
+// set text color based on background color:
+@function set-text-color($color) {
+   @if (lightness($color) > 50){
+    @return #{$color-text}; // Lighter backgorund, return dark color
+  }
+  @else {
+     @return #{$white}; // Darker background, return light color
+  }
+}
+
+//url encode color sass function
+//does not work with colors containing alpha
+@function encodecolor($string) {
+    $string: '%23' + $string;
+	@if type-of($string) == 'color' {
+        $hex: str-slice(ie-hex-str($string), 4);
+        $string:unquote("#{$hex}");
+    }
+	@return $string;
+}
+
+// pow function
+@function pow($number, $exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  }
+
+  @return $value;
+}
+
+@function hsb($h-hsb, $s-hsb, $b-hsb, $a: 1) {
+  @if $b-hsb == 0 {
+    @return hsla(0, 0, 0, $a)
+  ;} @else {
+    $l-hsl: ($b-hsb/2) * (2 - ($s-hsb/100));
+    $s-hsl: ($b-hsb * $s-hsb) / if($l-hsl < 50, $l-hsl * 2, 200 - $l-hsl * 2);
+    @return hsla($h-hsb, $s-hsl, $l-hsl, $a);
+  }
+}

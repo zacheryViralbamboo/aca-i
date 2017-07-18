@@ -1,0 +1,104 @@
+
+// Responsive Thresholds
+$bp-phone-sm:   320px; 	  // the width of an iPhone 5 / SE.
+$bp-phone-md:   360px; 	  // the width of a medium sized phone
+$bp-phone-lg:   425px; 	  // the width of a big ass android phone.
+$bp-phone:      480px; 		// typical max width for phones.
+$bp-to-phone:   525px;    // Added Mobile breakpoint for Toolkit
+$bp-tablet-sm:  640px; 		// small tablets.
+$bp-tablet:     768px; 	  // the width of an iPad in portrait. Generally screen width smaller than this belongs phones and phablets.
+$bp-tablet-md:  820px; 	  // even bigger tablets, possibly a very small window on a desktop
+$bp-desktop:    990px;   	// the width of a small window on a desktop.
+$bp-desktop-sm: 1152px; 	// slightly larger but still small.
+$bp-desktop-md: 1280px; 	// normal desktop size.
+$bp-desktop-ml: 1366px; 	// medium but slightly bigger desktop size.
+$bp-desktop-lg: 1440px;		// big desktop displays.
+$bp-desktop-xl: 1680px; 	// big ass desktop displays.
+$bp-desktop-hd: 1920px; 	// going HD.
+
+$close-grid-mx: 1172px;
+
+// For Neat: Please use following
+
+// @media Widths:
+
+// OR: $phone-sm  < 480 <= $phone < 768 <=  $tablet  < 992 <= $desktop  < 1152 <=  $desktop-md  < 1440 <=  $desktop-lg  < 1680 <=  $desktop-xl
+
+// note that the phones are limiting with max.
+
+$close-grid:        "only screen and (max-width: #{$close-grid-mx}) and (min-width: #{$bp-phone})";
+$header-spacing:    "only screen and (max-width: #{$bp-desktop-sm - 1}) and (min-width: #{$bp-tablet-md})";
+
+$phone-sm:          "only screen and (max-width: #{$bp-phone-sm - 1} )";
+$phone-md:          "only screen and (min-width: #{$bp-phone-md})";
+  $upto-phone-md:   "only screen and (max-width: #{$bp-phone-md - 1})";
+$phone-lg:          "only screen and (min-width: #{$bp-phone-lg})";
+  $upto-phone-lg:   "only screen and (max-width: #{$bp-phone-lg - 1})";
+$phone:             "only screen and (min-width: #{$bp-phone})";
+  $upto-phone:      "only screen and (max-width: #{$bp-phone - 1})";
+  $to-phone:        "only screen and (min-width: #{$bp-to-phone})";
+    $upto-to-phone: "only screen and (max-width: #{$bp-to-phone})";
+
+$tablet-sm:         "only screen and (min-width: #{$bp-tablet-sm})";
+  $upto-tablet-sm:  "only screen and (max-width: #{$bp-tablet-sm - 1})";
+$tablet:            "only screen and (min-width: #{$bp-tablet})";
+  $upto-tablet:     "only screen and (max-width: #{$bp-tablet - 1})";
+$tablet-md:         "only screen and (min-width: #{$bp-tablet-md})";
+  $upto-tablet-md:  "only screen and (max-width: #{$bp-tablet-md - 1})";
+
+$desktop:           "only screen and (min-width: #{$bp-desktop})";
+  $upto-desktop:    "only screen and (max-width: #{$bp-desktop - 1})"; // anything that's smaller than a desktop
+$desktop-sm:        "only screen and (min-width: #{$bp-desktop-sm})";
+  $upto-desktop-sm: "only screen and (max-width: #{$bp-desktop-sm - 1})";
+$desktop-md:        "only screen and (min-width: #{$bp-desktop-md})";
+  $upto-desktop-md: "only screen and (max-width: #{$bp-desktop-md - 1})";
+$desktop-ml:        "only screen and (min-width: #{$bp-desktop-ml})";
+  $upto-desktop-ml: "only screen and (max-width: #{$bp-desktop-ml - 1})";
+$desktop-lg:        "only screen and (min-width: #{$bp-desktop-lg})";
+  $upto-desktop-lg: "only screen and (max-width: #{$bp-desktop-lg - 1})";
+$desktop-xl:        "only screen and (min-width: #{$bp-desktop-xl})";
+  $upto-desktop-xl: "only screen and (max-width: #{$bp-desktop-xl - 1})";
+$desktop-hd:        "only screen and (min-width: #{$bp-desktop-hd})";
+
+
+// device types
+
+$only-phones: $upto-tablet-sm;
+$only-tablets: "only screen and (min-width: #{$bp-tablet-sm}) and (max-width: #{$bp-desktop - 1})";
+$only-tablets-sm: "only screen and (min-width: #{$bp-tablet-sm}) and (max-width: #{$bp-tablet - 1})";
+$only-tablets-md: "only screen and (min-width: #{$bp-tablet}) and (max-width: #{$bp-desktop - 1})";
+$only-laptops: "only screen and (min-width: #{$bp-desktop}) and (max-width: #{$bp-desktop-xl - 1})";
+
+
+// vertical breakpoints
+
+$bp-vert-sm: 640px;
+$bp-vert-md: 768px;
+$bp-vert-lg: 820px;
+$bp-vert-xl: 860px;
+$bp-vert-hd: 900px;
+
+$vert-sm: "only screen and (min-height: #{$bp-vert-sm})";
+$vert-md: "only screen and (min-height: #{$bp-vert-md})";
+$vert-lg: "only screen and (min-height: #{$bp-vert-lg})";
+$vert-xl: "only screen and (min-height: #{$bp-vert-xl})";
+
+$vert-desktop-sm: "only screen and (min-width: #{$bp-desktop}) and (min-height: #{$bp-vert-sm})";
+$vert-desktop-md: "only screen and (min-width: #{$bp-desktop-md}) and (min-height: #{$bp-vert-md})";
+$vert-desktop-lg: "only screen and (min-width: #{$bp-desktop-lg}) and (min-height: #{$bp-vert-lg})";
+$vert-desktop-xl: "only screen and (min-width: #{$bp-desktop-xl}) and (min-height: #{$bp-vert-xl})";
+$vert-desktop-hd: "only screen and (min-width: #{$bp-desktop-hd}) and (min-height: #{$bp-vert-hd})";
+
+
+// landscape breakpoints
+
+$bp-landscape-phone-sm: 568px;
+$bp-landscape-phone-md: 667px;
+$bp-landscape-phone-lg: 720px;
+
+$landscape-phone-sm:        "only screen and (orientation: landscape) and (min-width: #{$bp-landscape-phone-sm}) and (max-height: 414px)";
+  $upto-landscape-phone-sm: "only screen and (orientation: landscape) and (max-width: #{$bp-landscape-phone-sm - 1})";
+$landscape-phone-md:        "only screen and (orientation: landscape) and (min-width: #{$bp-landscape-phone-md}) and (max-height: 414px)";
+  $upto-landscape-phone-md: "only screen and (orientation: landscape) and (max-width: #{$bp-landscape-phone-md - 1})";
+$landscape-phone-lg:        "only screen and (orientation: landscape) and (min-width: #{$bp-landscape-phone-lg}) and (max-height: 414px)";
+  $upto-landscape-phone-lg: "only screen and (orientation: landscape) and (max-width: #{$bp-landscape-phone-lg - 1})";

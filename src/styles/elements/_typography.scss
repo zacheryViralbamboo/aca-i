@@ -1,0 +1,12 @@
+@mixin reset-typography {
+	color: tint( $black, 30 );
+  text-decoration: none;
+	text-transform: none;
+	letter-spacing: 0;
+	font-weight: 400;
+	font-size: ms(1);
+	font-family: $font-stack-body;
+	-webkit-font-smoothing: antialiased; // prevent texts from flashing when transforming
+  -moz-osx-font-smoothing: grayscale;
+  // replace with project setting
+}

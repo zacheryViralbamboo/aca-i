@@ -1,0 +1,270 @@
+body {
+  font-family: 'Cairo', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  transition: 0.25s ease;
+
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h1,h2,h3,h4 {
+    color: $toolkit-blue;
+}
+
+
+p, a {
+  color: $toolkit-text-blue;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+			opacity: 0.8;
+			transition: all 0.25s ease;
+		}
+		&:active {
+			opacity: 0.5;
+		}
+}
+
+.background-bars {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  line-height: 0;
+  overflow: hidden;
+  .blue-bar{
+    border-bottom: 5px solid $toolkit-blue;
+    width: 30%;
+    display: inline-block;
+    margin: 0 0 0 1px;
+  }
+  .gold-bar{
+    border-bottom: 5px solid $toolkit-gold;
+    width: 13%;
+    display: inline-block;
+    margin: 0 -5px 0 -5px;
+  }
+  .lightblue-bar{
+    border-bottom: 5px solid $toolkit-light-blue;
+    width: 24%;
+    display: inline-block;
+    margin: 0 -2px 0 0;
+  }
+  .blue-bar-2{
+    border-bottom: 5px solid $toolkit-blue;
+    width: 17%;
+    display: inline-block;
+    margin: 0 -3px 0 -2.5px;
+  }
+  .gold-bar-2{
+    border-bottom: 5px solid $toolkit-gold;
+    width: 5%;
+    display: inline-block;
+    margin: 0 0 0 -2px;
+  }
+  .blue-bar-3{
+    border-bottom: 5px solid $toolkit-blue;
+    width: 11%;
+    display: inline-block;
+    margin: 0 0 0 -4px;
+  }
+}
+
+.background-pattern-circle-small{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: $toolkit-gold;
+  opacity: 0.3;
+  position: absolute;
+  top: 55%;
+  left: 1%;
+  @media #{$upto-to-phone} {
+    display: none;
+  }
+}
+
+.header-content-area {
+  .background-pattern-circle-small {
+    display: none;
+  }
+  .page-header {
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.circle-border {
+  max-height: 500px;
+  max-width: 500px;
+  height: 70%;
+  width: 70%;
+  position: absolute;
+  top: -24%;
+  right: -6%;
+  background-blend-mode: overlay;
+  z-index: -1
+}
+.background-pattern-circle{
+  height: 100%;
+  width: 100%;
+  background: url("../images/background-circle.svg") no-repeat;
+  background-blend-mode: multiply;
+}
+
+.scroll-button {
+  width: 4em;
+  display: inline-block;
+  vertical-align: middle;
+  &:before {
+    content: "";
+    background: url("../images/button-shadow.svg") no-repeat;
+    position: absolute;
+    top: 80%;
+    width: 7em;
+    height: 6em;
+    left: 81%;
+    @media #{$upto-tablet-md} {
+      left: 75%;;
+    }
+  }
+  @media #{$upto-tablet-sm} {
+    display: none;
+  }
+}
+
+.scroll-button-safety {
+  width: 100%;
+  display: inline-block;
+  padding-top: 4em;
+  img {
+    display: inline-block;
+    width: 100px;
+  }
+  &:before {
+    display: none;
+  }
+   @media #{$upto-tablet-sm} {
+    display: none;
+  }
+}
+
+.scroll-title {
+  font-weight: 700;
+  display: inline-block;
+  vertical-align: top; 
+}
+
+.image-block {
+  position: absolute;
+    top: 35%;
+    left: 27%;
+    @media #{$upto-desktop} {
+      top: 50%;
+      left: 15%;
+    }
+    @media #{$upto-to-phone} {
+      position: initial;
+    }
+  img{
+    width: 200px;
+    height: 200px;
+    @media #{$upto-tablet-md} {
+			width: 150px;
+	}
+  }
+  p {
+    width: 12em;
+    margin: 0;
+    span {
+      font-weight: 600;
+      font-size: 2em;
+    }
+    @media #{$upto-to-phone} {
+      margin-left: auto;
+      width: initial;
+    }
+  }
+  .image-block-text {
+    right: -55%;
+    top: 0;
+    position: absolute;
+    @media #{$upto-tablet-md} {
+			right: -35%;
+	}
+  @media #{$upto-to-phone} {
+      position: initial;
+    }
+  }
+  .image-block-text-2 {
+    left: -55%;
+    bottom: -15%;
+    position: absolute;
+    @media #{$upto-tablet-md} {
+			left: -35%;
+      bottom: 0;
+	  }
+    @media #{$upto-to-phone} {
+      position: initial;
+    }
+  }
+}
+
+.block-2 {
+  top: 30%;
+  left: 4%;
+  @media #{$upto-to-phone} {
+      position: initial;
+      right: 0;
+    }
+  p {
+    &:last-child {
+      &:before {
+        content: "";
+        background: url("../images/basic-crs.svg") no-repeat;
+        background-size: 51px 50px;
+        width: ms(5);
+        height: 50px;
+        display: inline-block;
+        position: absolute;
+        top: -1em;
+        right: 0;
+        @media #{$upto-to-phone} {
+          display: none;
+        }
+      }
+    }
+  }
+  span { 
+    position: relative;
+    z-index: 1;
+    text-align: left;
+    display: block;
+    left: 20%;
+    &:after {
+      content: "";
+      width: 63px;
+      height: 30px;
+      background-color: $toolkit-gold;
+      position: absolute;
+      left: -5%;
+      top: 40%;
+      z-index: -1;
+      @media #{$upto-to-phone} {
+      display: none;
+    }
+    }
+    @media #{$upto-to-phone} {
+      position: initial;
+      text-align: right;
+      background-color: $toolkit-gold;
+      width: 3em;
+      margin-left: auto;
+    }
+  }
+} 

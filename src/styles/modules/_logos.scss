@@ -1,0 +1,166 @@
+@mixin menu-items {
+    position: absolute;
+    top: -2.5em;
+    right: 0;
+    display: inline-block;
+    width: ms(3);
+    height: 31px;
+    background-size: 32px 31px;
+  content: "";
+    @media screen and (max-width: 980px) {
+      width:ms(2);
+    }
+    @media #{$upto-tablet-md} {
+     right: 1.5em;
+  }
+}
+
+.site-logo {
+  @include hide-text;
+  display: inline-block;
+  box-sizing: content-box;
+  // applying this class to a <h1> tag with site title, for example, will hide the text and use the logo as an background image for it.
+  // Good for SEO purposes.
+  width: auto; //replace with logo width
+  height: auto; // ditto
+  background: url('') no-repeat center;
+  // put the logo's image file (preferably .svg) as the background for this element
+  background-size: auto;
+}
+
+// #{$tablet}
+
+
+.nav-item-1 {
+  position: relative;
+  &::before {
+    @include menu-items;
+    background: url(../images/toolkit.svg) no-repeat right;
+    @media #{$upto-tablet-sm} {
+      display: none;
+    }
+  }
+}
+
+.nav-item-2 {
+  position: relative;
+  &::before {
+    @include menu-items;
+    background: url(../images/country.svg) no-repeat right;
+    @media #{$upto-tablet-sm} {
+      display: none;
+    }
+  }
+}
+
+.nav-item-3 {
+  position: relative;
+  &::before {
+    @include menu-items;
+    background: url(../images/basic-crs.svg) no-repeat right;
+    @media #{$upto-tablet-sm} {
+      display: none;
+    }
+  }
+}
+
+.nav-item-4 {
+  position: relative;
+  &::before {
+    @include menu-items;
+    background: url(../images/safety-kit.svg) no-repeat right;
+    @media #{$upto-tablet-sm} {
+      display: none;
+    }
+  }
+}
+
+.nav-item-5 {
+  position: relative;
+  &::before {
+    @include menu-items;
+    background: url(../images/call-us.svg) no-repeat right;
+    @media #{$upto-tablet-sm} {
+      display: none;
+    }
+  }
+}
+
+.nav-item-6 {
+  position: relative;
+  &::before {
+    @include menu-items;
+    background: url(../images/safe-kids.svg) no-repeat right;
+    @media #{$upto-tablet-sm} {
+      display: none;
+    }
+  }
+}
+
+.nav-item-7 {
+  position: relative;
+  &::before {
+    @include menu-items;
+    background: url(../images/home.svg) no-repeat right;
+    @media #{$upto-tablet-sm} {
+      display: none;
+    }
+  }
+}
+
+.logo-space {
+  display: inline-block;
+  height: 3em;
+  // width: 50%;
+  text-align: left;
+  .logo-space-image {
+    display: inline-block;
+    padding: 0 2em 0 0;
+    width: auto;
+    vertical-align: middle;
+    // height: 3em;
+    @media #{$upto-tablet-md} {
+      display: inline-block;
+      padding: 2em 0.5em 0;
+    }
+    @media #{$tablet-md} {
+      &:last-child{
+        padding-right: 0;
+      }
+    }
+  }
+  img {
+    height: 2.2em;
+    // width: auto;
+  }
+}
+
+.footer-logo-space {
+  float: left;
+  @media #{$upto-tablet-md} {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.header-logo-space {
+  padding-top: 2em;
+  @media screen and (max-width: 819px) {
+    padding-top: 1em;
+  }
+  @media #{$upto-to-phone} {
+    display: none;
+  }
+  img {
+    height: 1.8em;
+  }
+  span {
+    img {
+      height: 2.8em;
+      @media #{$upto-tablet-sm} {
+        height: 2em;
+      }
+    }
+  }
+}

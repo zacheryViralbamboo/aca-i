@@ -1,0 +1,25 @@
+{
+  "name": "Alessandro Caruso Architecture and Interiors | Architecture News & Events",
+  "description": "We are a multi-disciplinary architects consultancy. With experience in Healthcare, Education, Commercial, Conservation and Residential sectors",
+  "main": "index.html",
+  "authors": [
+    "Viralbamboo"
+  ],
+  "license": "UNLICENSED",
+  "homepage": "http://www.viralbamboo.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "modular-scale": "^2.1.3",
+    "bourbon": "^4.2.7",
+    "jquery": "^3.1.0",
+    "gsap": "^1.19.1",
+    "neat": "^2.0.0"
+  }
+}

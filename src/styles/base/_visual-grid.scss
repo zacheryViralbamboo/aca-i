@@ -1,0 +1,44 @@
+@mixin vertical-grid(
+  // this mixin reqires Bourbon.
+  // number of columns to divide into.
+  $columns: 6,
+  // width of grid lines.
+  $border-width: 1px,
+  // colour of grid lines.
+  $color: $color-border,
+  // opacity of grid lines.
+  $opacity: 0.5) {
+
+  // units are all viewport based.
+  // the grid will not render for browsers that does not support viewport units or calc() or background-size.
+  // and that's okay.
+
+  // calculate grid column width
+  $column-width: 100vw / $columns;
+
+  @if $color != $color-border {
+    // if a color is assigned, use specified opacity of the color to draw the grid
+    $color: transparentize($color, (1 - $opacity));
+  }
+
+  background-image:
+    linear-gradient(
+      // bourbon linear-gradient mixin for generating the gridlines
+      to right,
+      transparent 0,
+      transparent calc(#{$column-width} - #{$border-width}),
+      // begin first line
+      tint($color,25) calc(#{$column-width} - #{$border-width}),
+      tint($color,25) calc(#{$column-width} + #{$border-width}),
+      transparent calc(#{$column-width} + #{$border-width})
+      // end first line
+    )
+  ;
+
+  // repeat the above gradient-grid
+  background-repeat: repeat;
+
+  // stop the gradient base of 1 column at the first line drawn
+  background-size: $column-width 100%;
+
+}

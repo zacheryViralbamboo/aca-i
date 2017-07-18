@@ -1,0 +1,16 @@
+// imports all files under this directory.
+
+@import "functions";
+@import "breakpoints";   // Breakpoints for responsive design. Use @include media($query) {} predominantly for mobile first approach
+
+// Project Specific Variables
+
+@import "units";
+@import "colors";
+@import "fonts";
+@import "resets";
+
+@import "mixins";      // Blurs, filters, shadows, transitions, blend modes, all possible mixins for those kind of visual effects
+@import "animations";
+
+@import "visual-grid";

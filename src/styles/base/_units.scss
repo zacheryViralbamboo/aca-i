@@ -1,0 +1,6 @@
+// Define units that repeatedly show up in the design
+// Modular scale is also a neat way to do this, simply use ms(n) to set margins etc.
+
+$unit: ms(1) !default;
+
+$page-side-margin: ms(5);

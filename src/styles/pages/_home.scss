@@ -1,0 +1,17 @@
+
+$custom-neat-grid: (
+columns: 4,
+gutter: 0px,
+);
+
+@mixin tu {
+	content: '';
+	width: 0;
+	height: 0;
+	border-top: 50px solid $to-greyBG;
+	border-right: 50px solid transparent;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+

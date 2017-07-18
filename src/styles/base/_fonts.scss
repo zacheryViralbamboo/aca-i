@@ -1,0 +1,16 @@
+$font-stack-body: 'Helvetica Neue' , 'Segoe UI' , sans-serif !default;
+$font-stack-heading:  'Helvetica Neue' , 'Segoe UI' , sans-serif !default;
+$text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.35);;
+
+// Uppercase styling mixins.
+
+@mixin allcaps($indent:false) {
+	@if $indent == true {
+		text-indent: 0.1rem;
+	}
+	font-size: 85%;
+	font-weight: 600;
+
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
+}

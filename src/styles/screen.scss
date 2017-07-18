@@ -1,0 +1,22 @@
+// The master stylesheet for bundling all partials.
+// The styles here are targeted at screens.
+// If print styles are required please start a new file.
+
+@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "../bower_components/neat/core/neat";
+
+@import "../bower_components/modular-scale/stylesheets/modular-scale";
+$ms-base: 1.4rem,1rem;
+$ms-ratio: 1.618;
+// Go to this page for a detailed table of this modular scale
+// http://www.modularscale.com/?14,10&px&1.618&sass&text
+
+// Use CSSNext to create fallbacks for old browsers
+
+// Base Styles and Mixins
+
+@import "base/all";
+
+@import "elements/all";
+@import "modules/all";
+@import "pages/all";

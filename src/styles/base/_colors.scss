@@ -1,0 +1,57 @@
+// Accents
+
+// Regarding the !default flag:
+// <Quote> The key to this stage is in using the !default flag after the variable declarations.
+// Doing this allows you to overwrite them within the theme .scss files;
+// the !default effectively says “use this value if it isn’t defined elsewhere”. </Quote>
+// Those values will be overwritten by themes.
+
+// Basic Colors
+
+$white: #fff;
+$black: #000;
+$white: #fff;
+$black: #000;
+$toolkit-gold: #b69553;
+$toolkit-lightgold: rgba(182,149,83,0.6);
+$toolkit-grey: #e6eaef;
+$toolkit-blue: #012e63;
+$toolkit-text-blue: #002f65;
+$toolkit-light-blue: #00b3e3;
+$toolkit-contact-blue: #bfecf7;
+$toolkit-opaic-gold: #efe9df;
+$toolkit-lightgold: #e2d1af;
+$toolkit-grey-gradient: linear-gradient(126deg, #93a3a7, #3d3e4c);
+$toolkit-blue-gradient: linear-gradient(156deg, #174273, #002f65);
+$toolkit-lightblue-gradient: linear-gradient(156deg, #577699, #29507e);
+$toolkit-brightblue-gradient: linear-gradient(0deg, #70efed, #00b3e3);
+$toolkit-gold-gradient: linear-gradient(to right, #ccad58, #b69553);
+$toolkit-lightgold-gradient: linear-gradient(to right, #cdb78a, #b69553);
+//Opaic Colors
+$to-footerText: rgba(0,0,0,0.6);
+
+// The default theme has 2 main accent colors.
+// Depending on themes to be used there might be only 1 accent color. In cases where this might crash,
+
+$color-accent: #0066cf !default;
+
+$color-secondary: #49bf64 !default;
+$color-highlighter: tint($color-secondary,70) !default;
+
+$color-shadow: #1A2747 !default;
+
+// Tinted Scale
+
+$highlight: $white;
+$shadow: $color-shadow;
+
+@function grey($value: 0) {
+  @return mix($highlight,$shadow,(100 - $value));
+}
+
+// UI colors
+$color-background: $white !default;
+$color-border: grey(10) !default;
+$color-text: grey(85) !default;
+$color-link: inherit !default;
+$color-drop-shadow: $shadow !default;

@@ -1,0 +1,167 @@
+$custom-footer-grid: (
+  columns: 3,
+  gutter: 2em,
+);
+
+footer {
+	position: relative;
+	padding-top: 10em; 
+	@media #{$upto-to-phone} {
+		padding-top: 8em;
+	}
+}
+
+.footer-links {
+  @include grid-container
+  background-color: $toolkit-grey;
+  margin: 0;
+  text-align: right;
+  padding: 3em 5em;
+  direction: rtl;
+@media #{$upto-desktop-md} {
+	padding: 2em 1.8em;
+}
+  &:before {
+	  content: "";
+	  background: url("../images/footer-grey-header-3.svg") no-repeat;
+	  background-size: 100% 100%;
+	  height: 100%;
+	  width: 100%;
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  overflow: hidden;
+	  z-index: -1;
+	  @media #{$desktop-hd}{
+		  height: 65%;
+	  }
+	  @media #{$desktop-md}{
+		top: 26%;
+		height: 60%;
+	}
+	  @media #{$close-grid} {
+		top: -8%;
+		height: 100%;
+	  }
+	  @media #{$upto-desktop} {
+		top: -7%;
+	  }
+	  @media screen and (max-width: 575px) {
+		  top: -11%;
+	  }
+	  @media #{$phone-sm} {
+		  top: -12.5%;
+	  }
+  }	
+}
+
+.footer-block {
+	text-align: right; 
+	padding: 1.8em;
+	display: inline-block;
+	vertical-align: top;
+	&:last-of-type {
+		padding-right: 0;
+	}
+	@media #{$close-grid} {
+		@include grid-column (1.5, $custom-footer-grid);
+		li {
+			padding: 0.2em 0;
+		}
+	}
+	@media #{$upto-tablet} {
+		padding: 0.5em;
+	}
+	@media #{$upto-phone} {
+		display: block;
+	}
+}
+
+.footer-block-columns {
+	@media #{$close-grid} {
+	@include grid-column (1.5, $custom-footer-grid)
+	}
+}
+
+.footer-copyright {
+	margin: 0;
+	display: inline-block;
+	vertical-align: text-bottom;
+	direction: ltr;
+	@media #{$upto-tablet-md} {
+		padding-top: 2em;;
+	}
+}
+
+.footer-header {
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.footer-copyright-block {
+	width: 100%;
+	padding-top: 3em;
+	clear: both;
+	@media #{$upto-tablet-md} {
+		text-align: center;
+	}
+}
+
+.footer-banner-bottom {
+	  width: 100%;
+	  
+	  overflow: hidden;
+	  padding-bottom: 10em;
+}
+
+.footer-grid-container {
+	display: inline-block;
+	@media #{$upto-desktop-sm} {
+	 @include grid-column (1.5, $custom-footer-grid)
+	}
+}
+
+.footer-contents {
+	width: 100%;
+	text-align: center;
+	padding: 8% 3em;
+	@media screen and (max-width: 550px) {
+		padding: 6em 2em;
+	}
+	@media #{$upto-phone} {
+		padding: 1em 2em 6em;
+	}
+}
+
+.footer-image-block {
+	width: 14em;
+	height: auto;
+	display: inline-block;
+	padding-bottom: 7em;
+	@media screen and (max-width: 575px) {
+		padding-bottom: 0;
+	}
+}
+
+
+.footer-header-icon {
+	width: 100%;
+	height: auto;
+}
+
+.footer-background-header {
+	position: absolute; 
+	top: -12%;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+	@media #{$desktop-md}{
+		top: -13%;
+	}
+	@media #{$desktop-xl}{
+		top: -18%;
+	}
+	@media #{$upto-to-phone} {
+		top: 0;
+	}
+}

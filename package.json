@@ -1,0 +1,35 @@
+{
+  "name": "Alessandro Caruso Architecture and Interiors | Architecture News & Events",
+  "version": "0.4.2",
+  "description": "We are a multi-disciplinary architects consultancy. With experience in Healthcare, Education, Commercial, Conservation and Residential sectors",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Viralbamboo",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.0",
+    "browser-sync": "^2.15.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-changed": "^2.0.0",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^5.0.0",
+    "gulp-filter": "^4.0.0",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-newer": "^1.3.0",
+    "gulp-postcss": "^6.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^2.0.0",
+    "imagemin-pngquant": "^5.0.0",
+    "postcss-cssnext": "^2.8.0",
+    "run-sequence": "^1.2.2"
+  }
+}

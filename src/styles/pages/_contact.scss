@@ -1,0 +1,141 @@
+@mixin contact-icons {
+    content: "";
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        right: -15%;
+        top: 1em;
+        @media #{$upto-desktop} {
+            right: -20%;
+        }
+        @media #{$upto-tablet-md} {
+            right: -10%;
+         }
+         @media #{$upto-phone-lg} {
+            top: -20%;
+            right: 40%;
+         }
+}
+
+.contact-navigation {
+    .page-header, .page-header-content {
+        display: none;
+    }
+    .footer-background-header {
+        display: none;
+    }
+}
+
+.contact-section {
+    display: flex;
+    justify-content: space-around;
+    direction: rtl;
+    padding: 8em 8% 0 3em;
+    margin-bottom: -15%;
+    @media #{$upto-tablet-md} {
+        display: block;
+        padding: 8em 5% 0;
+    }
+}
+
+.contact-paragraph {
+    width: 50%;
+    @media #{$upto-tablet-md} {
+        width: 100%;
+        padding-bottom: 10%;
+    }
+    p {
+        width: 80%;
+        color: $toolkit-blue;
+    }
+}
+
+.contact-content {
+    background: $toolkit-contact-blue;
+    padding: 3em 8vw;
+    width: 50%;
+    position: relative;
+    @media #{$upto-desktop} {
+        padding-left: 0em;
+        padding-right: 6em;
+    }
+    @media #{$upto-tablet-md} {
+        width: 100%;
+        padding: 3em 13% 3em 0;
+    }
+    @media #{$upto-phone-lg} {
+        padding: 3em 13%;
+        text-align: center;
+        a {
+            display: block;
+            @media #{$upto-phone-lg} {
+            padding-bottom: 4em;
+            }
+        }
+    } 
+    h3, p {
+        display: inline-block;
+    }
+    h3 {
+        padding-left: 1em;
+        @media #{$upto-tablet-md} {
+            padding-right: 1em;
+        }    
+    }
+    &:after {
+        content: "";
+        width: 50px;
+        height: 50px;
+        background: $toolkit-contact-blue;
+        position: absolute;
+        right: -25px;
+        transform: rotate(45deg);
+        top: 40%;
+        z-index: -1;
+        @media #{$upto-tablet-md} {
+        top: -25px;
+        right: initial;
+        @media #{$upto-phone-lg} {
+            right: 10%;
+        }
+        }
+    }
+}
+
+.contact-email {
+    position: relative;
+    padding-bottom: 1em;
+    &:after {
+        @include contact-icons();
+        background: url("../images/icon-email.svg") no-repeat;
+        @media #{$upto-phone-lg} {
+            top: 2%;
+        }
+    }
+    @media #{$upto-phone-lg} {
+        padding-top: 2em;
+    }
+}
+
+.contact-phone {
+    position: relative;
+    padding-bottom: 1em;
+    &:after {
+        @include contact-icons();
+        background: url("../images/icon-phone.svg") no-repeat;
+    }
+}
+.contact-fax {
+    position: relative;
+    padding-bottom: 1em;
+    &:after {
+        @include contact-icons();
+        background: url("../images/icon-fax.svg") no-repeat;
+        @media #{$upto-phone-lg} {
+            top: -35%;
+        }
+    }
+    @media #{$upto-phone-lg} {
+        padding-bottom: 0;
+    }
+}

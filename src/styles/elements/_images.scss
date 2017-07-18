@@ -1,0 +1,36 @@
+// Images
+
+
+img {
+    max-width: 100%; // Prevent images from going out of it's container
+}
+
+figure {
+  margin: 0; // resets figure margin
+}
+
+@mixin shaded($option: solid) {
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	@if $option == reset {
+		&:before {
+			position: relative;
+		}
+	}
+	@if $option == solid {
+		&:before {
+			background: transparentize($color-accent, 0.4);
+		}
+	}
+  @if $option == black {
+		&:before {
+			background: transparentize($black, 0.4);
+		}
+	}
+}
